@@ -33,6 +33,7 @@
         "https": "{{ consul_addresses.https }}",
         {% if consul_version is version_compare('1.3.0', '>=') %}
         "grpc": "{{ consul_addresses.grpc }}"
+        "grpc_tls": "{{ consul_addresses.grpc_tls }}"
         {% endif %}
     },
     {## Ports Used ##}
@@ -48,6 +49,7 @@
         "server": {{ consul_ports.server }},
         {% if consul_version is version_compare('1.3.0', '>=') %}
         "grpc": {{ consul_ports.grpc }}
+        "grpc_tls": {{ consul_ports.grpc_tls }}
         {% endif %}
     },
 
